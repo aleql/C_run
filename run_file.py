@@ -24,7 +24,8 @@ if __name__ == '__main__':
         print(" >> Se procedera a copiar cada tarea a una carpeta separada")
         result_dir = input(" >> Ingrese direccion de carpeta donde desea copiar las tareas: ")
         content_folder_dir = input(" >> Ingrese direccion de carpeta con contenidos (Makefile, Tests, headers, etc): ")
-        parse_dir(files_dir, result_dir, content_folder_dir)
+        fname = input(" >> Ingrese nombre del archivo")
+        parse_dir(files_dir, result_dir, content_folder_dir, fname)
         print(" >> Se crearon las carpetas con exito\n")
     else:
         result_dir = input(" >> Ingrese direccion de carpeta donde se encuentran las tareas: ")

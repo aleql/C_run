@@ -7,20 +7,19 @@ import sys
 """
 Copia cada tarea, test y makefile a su carpeta correspondiente
 """
-def parse_dir(files_dir, result_dir, content_folder_dir):
+def parse_dir(files_dir, result_dir, content_folder_dir, fname):
 
     # Iterate over all files of the folder
     files = os.listdir(files_dir)
     for file in files:
         # Obtain rut and name of file
-        file_l = file.split("_")
-        rut = file_l[1]
-        fname = file_l[2]
-        print(" >Copiado {}".format(file))
+        file_l = file.split(".")
+        name = file_l[0]
+        print(" > Copiado {}".format(name))
 
         # Crear directorio para el archivo, copiarlo, y moverlo ahi
         oldroute = os.path.join(files_dir, file)
-        newroute = os.path.join(result_dir, rut)
+        newroute = os.path.join(result_dir, name)
 
         # Crear carpeta
         os.mkdir(newroute)
